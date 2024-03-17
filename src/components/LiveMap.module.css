@@ -1,0 +1,49 @@
+@keyframes pulse_deep {
+  0% {
+    transform: scale(0.1); /* Start at full size */
+    opacity: 0.5; /* Fully visible */
+  }
+  50% {
+    transform: scale(0.2); /* Increase size slightly */
+    opacity: 0.5; /* Slightly less visible */
+  }
+  100% {
+    transform: scale(0.6); /* Return to full size */
+    opacity: 0.5; /* Fully visible */
+  }
+}
+
+@keyframes pulse_faint {
+  0% {
+    transform: scale(0.8); /* Start larger than the deep circle */
+    opacity: 0.4; /* Less visible */
+  }
+  50% {
+    transform: scale(1); /* Increase size slightly more */
+    opacity: 0.4; /* More transparent */
+  }
+  100% {
+    transform: scale(1.2); /* Return to initial size */
+    opacity: 0.4; /* Return to initial visibility */
+  }
+}
+
+.pulseCircle_deep {
+  position: absolute;
+  width: 4px; /* Smaller circle */
+  height: 4px;
+  border-radius: 50%;
+  background-color: #3388ff;
+  animation: pulse_deep 2s infinite; /* Faster pulsation */
+  z-index: 2;
+}
+
+.pulseCircle_faint {
+  position: absolute;
+  width: 6px; /* Larger circle */
+  height: 6px;
+  border-radius: 50%;
+  background-color: #3388ff;
+  animation: pulse_faint 3s infinite; /* Slower pulsation */
+  z-index: 1;
+}
